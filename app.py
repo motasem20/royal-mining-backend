@@ -3,12 +3,16 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
 CORS(app)
 
+load_dotenv()
+
 # MongoDB Atlas connection string
-MONGO_URI = "mongodb+srv://rapuser:motasem0776622174@royalmining.iyszgb2.mongodb.net/?retryWrites=true&w=majority&appName=royalmining"
+MONGO_URI = "MONGO_URI"
 client = MongoClient(MONGO_URI)
 db = client["royal_mining"]
 collection = db["users"]
